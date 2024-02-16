@@ -21,9 +21,17 @@ function draw() {
   background(0, 0, 50); // deep blue
   
   ufo(x, y, d, r); // call the ufo() function (see below)
-  
+  x++; // add one to the value of x each frame
+  r += -.02; // add .02 to value of r
+  y -= .5; // spaceship moves upwards at .5
   // add code here to change the ship location each frame
-  
+  if(x > width) {
+    x = 0; //spaceship returns to start of canvas
+  }
+  if(y < 0){
+    y = height; //if spaceship vertical distance exceeds height, returns to canvas
+  }
+
   
 }
 
